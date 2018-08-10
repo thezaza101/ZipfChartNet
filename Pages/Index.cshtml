@@ -1,0 +1,19 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<br/>
+
+<form method="POST" asp-controller="UploadFiles" enctype="multipart/form-data">
+    <ul>
+        <li>Select a file: <input type="file" name="requestItem.file" /></li>
+        <li hidden="true">ID: <input asp-for="requestItem.id"/></li>
+        <li># words to plot (max 100) <input asp-for="requestItem.numCount"/></li>
+        <li>Remove Punctuation: <input asp-for="requestItem.removePunctuation"/></li>
+        <li>Case Sensitive?: <input asp-for="requestItem.caseSensitive"/></li>
+        <li>Chart Title: <input asp-for="requestItem.chartTitle"/></li>
+        <li>Chart Subtitle: <input asp-for="requestItem.chartSubTitle"/></li>
+    </ul>
+    <input type="submit" value="Submit" />
+</form>
